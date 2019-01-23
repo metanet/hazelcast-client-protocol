@@ -59,16 +59,13 @@ public interface CPSessionCodecTemplate {
 
     /**
      * Generates a new ID for the caller thread. The ID is unique in the given
-     * CP group. If this is the first generateThreadId() call, the given
-     * {@code initialValue} argument is used as the first ID.
+     * CP group.
      *
      * @param groupId      ID of the CP group
-     * @param initialValue Initial value to be used as ID if this is the first
-     *                     generateThreadId() call.
      *
      * @return             A unique ID for the caller thread
      */
     @Request(id = 4, retryable = true, response = ResponseMessageConst.LONG)
-    Object generateThreadId(Data groupId, long initialValue);
+    Object generateThreadId(Data groupId);
 
 }
